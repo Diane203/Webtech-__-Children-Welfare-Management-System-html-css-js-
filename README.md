@@ -96,6 +96,3 @@ location.reload();
 - Forms and report values should be treated as prototype behavior, not as verified operational records.
 - A production deployment would need a secure backend, database, server-side authorization, validated APIs, protected handling of sensitive child data, and a real payment integration where required.
 
-## License
-
-No license file is included. Contact the project owner before reusing or redistributing the code.
