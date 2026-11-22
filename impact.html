@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Impact - Hope Haven</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0B1120] text-slate-300 font-sans antialiased">
+
+    <nav class="flex justify-between items-center p-6 border-b border-slate-800 sticky top-0 bg-[#0B1120]/95 backdrop-blur z-50">
+        <div class="text-2xl font-bold text-white flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+            <span class="bg-emerald-500 text-white p-1.5 rounded-lg text-sm">🏠</span> Hope<span class="text-emerald-500">Haven</span>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="index.html" class="text-slate-300 hover:text-white transition">Home</a>
+            <a href="about.html" class="text-slate-300 hover:text-white transition">About</a>
+            <a href="impact.html" class="text-emerald-400 font-bold">Impact</a>
+            <a href="sponsor.html" class="text-slate-300 hover:text-white transition">Sponsor</a>
+            <a href="contact.html" class="text-slate-300 hover:text-white transition">Contact</a>
+        </div>
+        <a href="login.html" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-lg font-medium transition">Login</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="max-w-5xl mx-auto py-20 px-4 text-center fade-in">
+        <p class="text-emerald-500 text-xs font-bold tracking-widest mb-2">OUR IMPACT</p>
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">Real Change. <span class="text-emerald-500">Real Children.</span></h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto">Here's a live look at the impact we're making together — thanks to our staff, sponsors, and donors.</p>
+    </section>
+
+    <!-- LIVE STATS -->
+    <section class="max-w-6xl mx-auto py-12 px-4" id="impactStats"></section>
+
+    <!-- LIVE DONATION GOAL PROGRESS -->
+    <section class="max-w-6xl mx-auto py-16 px-4">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">Donation Goal Progress</h2>
+        <div class="bg-slate-900 border border-slate-800 rounded-xl p-8 max-w-3xl mx-auto">
+            <div class="flex justify-between mb-3">
+                <span class="text-white font-bold">New Beds for Children</span>
+                <span class="text-emerald-400 font-bold" id="goalPercent">0%</span>
+            </div>
+            <div class="w-full bg-slate-800 rounded-full h-4 mb-2 overflow-hidden">
+                <div id="goalBar" class="bg-gradient-to-r from-emerald-500 to-blue-500 h-4 rounded-full transition-all duration-1000" style="width: 0%"></div>
+            </div>
+            <p class="text-slate-400 text-sm">
+                Goal: 5,000,000 FRw — Raised so far:
+                <span class="text-emerald-400 font-bold" id="goalRaised">0 FRw</span>
+            </p>
+            <p class="text-xs text-slate-500 mt-3" id="goalContributors">Loading contributions...</p>
+        </div>
+    </section>
+
+    <!-- SUCCESS STORIES -->
+    <section class="max-w-6xl mx-auto py-16 px-4">
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">Success Stories</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl card-hover">
+                <div class="text-4xl mb-3">🌟</div>
+                <h3 class="text-white font-bold mb-2">From Silence to Words</h3>
+                <p class="text-slate-400 text-sm">After receiving a hearing aid, 6-year-old Eric said his first words. His world opened up — and so did ours.</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl card-hover">
+                <div class="text-4xl mb-3">🥇</div>
+                <h3 class="text-white font-bold mb-2">Champion Despite Challenges</h3>
+                <p class="text-slate-400 text-sm">Patrick, who uses a wheelchair, won gold at the regional sports competition. Nothing holds him back.</p>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 card-hover">
+                <div class="text-4xl mb-3">🏆</div>
+                <h3 class="text-white font-bold mb-2">Best Student Award</h3>
+                <p class="text-slate-400 text-sm">Aline topped her class this term. Her sponsor's support turned into a bright academic future.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="max-w-4xl mx-auto py-16 px-4 text-center">
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-700 rounded-2xl p-12">
+            <h2 class="text-3xl font-bold text-white mb-4">Be Part of the Story</h2>
+            <p class="text-slate-400 mb-8">Your support changes lives. Sponsor a child or make a donation today.</p>
+            <div class="flex justify-center gap-4 flex-wrap">
+                <a href="sponsor.html" class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg font-bold transition">💝 Sponsor a Child</a>
+                <a href="contact.html" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-3 rounded-lg font-bold border border-slate-700 transition">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 py-10 mt-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="text-xl font-bold text-white flex items-center gap-2 mb-3"><span class="bg-emerald-500 text-white p-1 rounded text-xs">🏠</span> Hope<span class="text-emerald-500">Haven</span></div>
+                    <p class="text-sm text-slate-500">Dedicated to providing comprehensive welfare management for orphaned and vulnerable children.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="index.html" class="hover:text-emerald-400 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-emerald-400 transition">About</a></li>
+                        <li><a href="impact.html" class="hover:text-emerald-400 transition">Impact</a></li>
+                        <li><a href="sponsor.html" class="hover:text-emerald-400 transition">Sponsor</a></li>
+                        <li><a href="contact.html" class="hover:text-emerald-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Contact Info</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>✉️ info@hopehaven.org</li>
+                        <li>📞 +250 780 565 497</li>
+                        <li>📍 Kigali, Rwanda</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-3 text-sm uppercase tracking-wider">Designer</h4>
+                    <p class="text-sm text-slate-400">IGIRANEZA DIANE</p>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 text-center text-xs text-slate-500">
+                <p>© 2026 Hope Haven — Children Welfare Management System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script>
+        // ============ LIVE STATS ============
+        function renderLiveStats() {
+            const totalDonated = DB.donations.reduce((s, d) => s + d.amount, 0);
+            const stats = document.getElementById('impactStats');
+            if (!stats) return;
+            stats.innerHTML = `
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 text-center card-hover"><p class="text-4xl font-bold text-emerald-400 mb-1">${DB.children.length}</p><p class="text-xs text-slate-500 uppercase tracking-wider">Children in Care</p></div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 text-center card-hover"><p class="text-4xl font-bold text-blue-400 mb-1">${DB.staff.length}</p><p class="text-xs text-slate-500 uppercase tracking-wider">Dedicated Staff</p></div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 text-center card-hover"><p class="text-4xl font-bold text-purple-400 mb-1">${DB.sponsors.length}</p><p class="text-xs text-slate-500 uppercase tracking-wider">Active Sponsors</p></div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 text-center card-hover"><p class="text-4xl font-bold text-orange-400 mb-1">${(totalDonated/1000000).toFixed(1)}M</p><p class="text-xs text-slate-500 uppercase tracking-wider">FRw Donated</p></div>
+                </div>
+            `;
+        }
+
+        // ============ LIVE GOAL PROGRESS BAR (with decimal) ============
+        function updateGoalProgress() {
+            const GOAL = 5000000; // 5,000,000 FRw
+            const raised = DB.donations.reduce((s, d) => s + d.amount, 0);
+
+            // Show 1 decimal place so tiny changes are visible
+            const percent = Math.min(100, (raised / GOAL) * 100).toFixed(1);
+
+            const bar = document.getElementById('goalBar');
+            const pctEl = document.getElementById('goalPercent');
+            const raisedEl = document.getElementById('goalRaised');
+            const contribEl = document.getElementById('goalContributors');
+
+            if (bar) bar.style.width = percent + '%';
+            if (pctEl) pctEl.textContent = percent + '%';
+            if (raisedEl) raisedEl.textContent = raised.toLocaleString() + ' FRw';
+            if (contribEl) {
+                const uniqueDonors = new Set(DB.donations.map(d => d.donor)).size;
+                contribEl.textContent = `${DB.donations.length} contribution${DB.donations.length !== 1 ? 's' : ''} from ${uniqueDonors} generous donor${uniqueDonors !== 1 ? 's' : ''}`;
+            }
+        }
+
+        // ============ REFRESH FROM STORAGE (Shared Function) ============
+        function refreshFromStorage() {
+            try {
+                const saved = localStorage.getItem('hopeHavenDB');
+                if (saved) {
+                    const fresh = JSON.parse(saved);
+                    if (fresh.donations) DB.donations = fresh.donations;
+                    if (fresh.children) DB.children = fresh.children;
+                    if (fresh.staff) DB.staff = fresh.staff;
+                    if (fresh.sponsors) DB.sponsors = fresh.sponsors;
+                }
+            } catch (e) { /* ignore parse errors */ }
+
+            renderLiveStats();
+            updateGoalProgress();
+        }
+
+        // ============ INIT ============
+        renderLiveStats();
+        updateGoalProgress();
+
+        // ============ AUTO-REFRESH TRIGGERS ============
+        // 1. Every 3 seconds (in case another tab is donating continuously)
+        setInterval(refreshFromStorage, 3000);
+
+        // 2. When the user switches BACK to this tab → instant refresh
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) refreshFromStorage();
+        });
+
+        // 3. When another tab writes to localStorage → instant refresh
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'hopeHavenDB') refreshFromStorage();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsor a Child - Hope Haven</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#0B1120] text-slate-300 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- NAV -->
+    <nav class="flex justify-between items-center p-6 border-b border-slate-800 sticky top-0 bg-[#0B1120]/95 backdrop-blur z-50">
+        <div class="text-2xl font-bold text-white flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+            <span class="bg-emerald-500 text-white p-1.5 rounded-lg text-sm">🏠</span> Hope<span class="text-emerald-500">Haven</span>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a href="index.html" class="text-slate-300 hover:text-white transition">Home</a>
+            <a href="about.html" class="text-slate-300 hover:text-white transition">About</a>
+            <a href="impact.html" class="text-slate-300 hover:text-white transition">Impact</a>
+            <a href="sponsor.html" class="text-emerald-400 font-bold">Sponsor</a>
+            <a href="contact.html" class="text-slate-300 hover:text-white transition">Contact</a>
+        </div>
+        <a href="login.html" class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2 rounded-lg font-medium transition">Login</a>
+    </nav>
+
+    <main class="flex-1 max-w-5xl mx-auto px-4 py-12 w-full">
+
+        <!-- HERO -->
+        <div class="text-center mb-10 fade-in">
+            <p class="text-emerald-500 text-xs font-bold tracking-widest mb-2">SPONSOR A CHILD</p>
+            <h1 class="text-4xl font-bold text-white mb-4">Change a Life Today</h1>
+            <p class="text-slate-400 max-w-2xl mx-auto">Your monthly sponsorship provides education, healthcare, and a loving home for a child in need. Choose a child, select your payment method, and start making a difference.</p>
+        </div>
+
+        <!-- STEP 1: CHOOSE A CHILD -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 mb-6">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                <h2 class="text-xl font-bold text-white">Choose a Child to Sponsor</h2>
+            </div>
+            <div id="childrenGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+            <p id="noChildren" class="text-slate-500 text-center py-8 hidden">All our children are sponsored! 🎉 Please contact us to support our general fund.</p>
+        </div>
+
+        <!-- STEP 2: YOUR INFO -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 mb-6">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                <h2 class="text-xl font-bold text-white">Your Information</h2>
+            </div>
+            <form id="sponsorForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-medium mb-2 text-slate-300">Full Name *</label>
+                    <input type="text" id="donorName" required placeholder="Your full name" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2 text-slate-300">Email Address *</label>
+                    <input type="email" id="donorEmail" required placeholder="you@example.com" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2 text-slate-300">Phone Number *</label>
+                    <input type="tel" id="donorPhone" required placeholder="+250 7XX XXX XXX" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-2 text-slate-300">Sponsorship Amount (FRw / month) *</label>
+                    <select id="donationAmount" required class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white focus:outline-none focus:border-emerald-500">
+                        <option value="25000">25,000 FRw — Basic Needs</option>
+                        <option value="50000" selected>50,000 FRw — Full Support (Recommended)</option>
+                        <option value="75000">75,000 FRw — Premium Care</option>
+                        <option value="100000">100,000 FRw — Champion Sponsor</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <!-- STEP 3: PAYMENT -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 mb-6">
+            <div class="flex items-center gap-3 mb-6">
+                <span class="w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                <h2 class="text-xl font-bold text-white">Payment Method</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <label class="cursor-pointer">
+                    <input type="radio" name="payment" value="Mobile Money" class="peer hidden" checked>
+                    <div class="bg-slate-800 border-2 border-slate-700 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 rounded-xl p-5 text-center transition">
+                        <div class="text-3xl mb-2">📱</div>
+                        <p class="text-white font-bold text-sm">Mobile Money</p>
+                        <p class="text-slate-400 text-xs mt-1">MTN / Airtel</p>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="payment" value="Card" class="peer hidden">
+                    <div class="bg-slate-800 border-2 border-slate-700 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 rounded-xl p-5 text-center transition">
+                        <div class="text-3xl mb-2">💳</div>
+                        <p class="text-white font-bold text-sm">Bank Card</p>
+                        <p class="text-slate-400 text-xs mt-1">Visa / Mastercard</p>
+                    </div>
+                </label>
+                <label class="cursor-pointer">
+                    <input type="radio" name="payment" value="Bank Transfer" class="peer hidden">
+                    <div class="bg-slate-800 border-2 border-slate-700 peer-checked:border-emerald-500 peer-checked:bg-emerald-500/10 rounded-xl p-5 text-center transition">
+                        <div class="text-3xl mb-2">🏦</div>
+                        <p class="text-white font-bold text-sm">Bank Transfer</p>
+                        <p class="text-slate-400 text-xs mt-1">Direct deposit</p>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Dynamic payment fields -->
+            <div id="paymentDetails" class="bg-slate-800/50 border border-slate-700 rounded-xl p-5">
+                <!-- Filled by JS -->
+            </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="bg-gradient-to-br from-emerald-500/10 to-blue-500/10 border border-emerald-500/30 rounded-2xl p-6 mb-6">
+            <h3 class="text-white font-bold mb-3">📋 Summary</h3>
+            <div class="flex justify-between text-sm mb-2"><span class="text-slate-400">Child:</span><span id="sumChild" class="text-white font-medium">—</span></div>
+            <div class="flex justify-between text-sm mb-2"><span class="text-slate-400">Donor:</span><span id="sumDonor" class="text-white font-medium">—</span></div>
+            <div class="flex justify-between text-sm mb-4"><span class="text-slate-400">Amount:</span><span id="sumAmount" class="text-emerald-400 font-bold">—</span></div>
+            <div class="border-t border-slate-700 pt-3 flex justify-between"><span class="text-white font-bold">Total:</span><span id="sumTotal" class="text-emerald-400 font-bold text-xl">0 FRw</span></div>
+        </div>
+
+        <button id="submitBtn" onclick="submitSponsorship()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-4 rounded-xl font-bold text-lg transition shadow-lg shadow-emerald-500/20">
+            💝 Complete Sponsorship
+        </button>
+    </main>
+
+    <!-- SUCCESS MODAL -->
+    <div id="successModal" class="modal-overlay hidden">
+        <div class="bg-slate-900 border border-emerald-500/50 rounded-2xl p-8 w-full max-w-md shadow-2xl text-center">
+            <div class="w-20 h-20 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-5xl mx-auto mb-4">✅</div>
+            <h2 class="text-2xl font-bold text-white mb-2">Payment Successful!</h2>
+            <p class="text-slate-400 mb-6">Thank you for your kindness. Your sponsorship has been recorded.</p>
+            <div class="bg-slate-800 border border-slate-700 rounded-lg p-4 mb-6 text-left">
+                <div class="flex justify-between text-sm mb-2"><span class="text-slate-400">Receipt #:</span><span id="receiptId" class="text-emerald-400 font-mono font-bold">—</span></div>
+                <div class="flex justify-between text-sm mb-2"><span class="text-slate-400">Child:</span><span id="receiptChild" class="text-white">—</span></div>
+                <div class="flex justify-between text-sm mb-2"><span class="text-slate-400">Amount:</span><span id="receiptAmount" class="text-emerald-400 font-bold">—</span></div>
+                <div class="flex justify-between text-sm"><span class="text-slate-400">Method:</span><span id="receiptMethod" class="text-white">—</span></div>
+            </div>
+            <button onclick="closeSuccessModal()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-lg font-bold transition">Done</button>
+        </div>
+    </div>
+
+    <footer class="border-t border-slate-800 py-8 mt-12 text-center text-xs text-slate-500">
+        <p>© 2026 Hope Haven — Children Welfare Management System. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script>
+        let selectedChild = null;
+
+        // ============ LOAD CHILDREN ============
+        function loadSponsorableChildren() {
+            const grid = document.getElementById('childrenGrid');
+            // Accept "Unsponsored" OR empty
+            const unsponsored = DB.children.filter(c => !c.sponsor || c.sponsor === 'Unsponsored');
+
+            if (unsponsored.length === 0) {
+                document.getElementById('noChildren').classList.remove('hidden');
+                grid.classList.add('hidden');
+                return;
+            }
+
+            grid.innerHTML = unsponsored.map(c => `
+                <div onclick="selectChild('${c.id}')" id="child-${c.id}"
+                     class="bg-slate-800 border-2 border-slate-700 rounded-xl p-4 cursor-pointer hover:border-emerald-500/50 transition">
+                    <div class="text-center">
+                        <div class="text-5xl mb-2">${c.avatar}</div>
+                        <p class="text-white font-bold">${c.name}</p>
+                        <p class="text-xs text-slate-400 mt-1">${c.age} years • ${c.gender}</p>
+                        <p class="text-xs ${c.disability === 'None' ? 'text-emerald-400' : 'text-amber-400'} mt-1">${c.disability}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function selectChild(id) {
+            selectedChild = DB.children.find(c => c.id === id);
+            document.querySelectorAll('[id^="child-"]').forEach(el => {
+                el.className = "bg-slate-800 border-2 border-slate-700 rounded-xl p-4 cursor-pointer hover:border-emerald-500/50 transition";
+            });
+            const el = document.getElementById(`child-${id}`);
+            if (el) el.className = "bg-slate-800 border-2 border-emerald-500 rounded-xl p-4 cursor-pointer transition ring-2 ring-emerald-500/30";
+            updateSummary();
+        }
+
+        // ============ PAYMENT METHOD ============
+        document.querySelectorAll('input[name="payment"]').forEach(input => {
+            input.addEventListener('change', renderPaymentDetails);
+        });
+
+        function renderPaymentDetails() {
+            const method = document.querySelector('input[name="payment"]:checked').value;
+            const box = document.getElementById('paymentDetails');
+
+            if (method === 'Mobile Money') {
+                box.innerHTML = `
+                    <p class="text-white font-semibold mb-4">📱 Mobile Money Details</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold mb-2 text-slate-400">Provider *</label>
+                            <select id="momoProvider" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white">
+                                <option>MTN Mobile Money</option>
+                                <option>Airtel Money</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-2 text-slate-400">Phone Number *</label>
+                            <input type="tel" id="momoPhone" placeholder="07XX XXX XXX" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white">
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3">You will receive a prompt on your phone to approve the payment.</p>
+                `;
+            } else if (method === 'Card') {
+                box.innerHTML = `
+                    <p class="text-white font-semibold mb-4">💳 Card Details</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="md:col-span-3">
+                            <label class="block text-xs font-bold mb-2 text-slate-400">Card Number *</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold mb-2 text-slate-400">Cardholder Name *</label>
+                            <input type="text" id="cardName" placeholder="Name on card" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-2 text-slate-400">Expiry *</label>
+                            <input type="text" id="cardExpiry" placeholder="MM/YY" maxlength="5" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-2 text-slate-400">CVV *</label>
+                            <input type="text" id="cardCvv" placeholder="123" maxlength="4" class="w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-white">
+                        </div>
+                    </div>
+                `;
+            } else {
+                box.innerHTML = `
+                    <p class="text-white font-semibold mb-4">🏦 Bank Transfer Details</p>
+                    <div class="bg-slate-900 border border-slate-700 rounded-lg p-4 text-sm space-y-2">
+                        <div class="flex justify-between"><span class="text-slate-400">Bank:</span><span class="text-white">Bank of Kigali</span></div>
+                        <div class="flex justify-between"><span class="text-slate-400">Account Name:</span><span class="text-white">Hope Haven Foundation</span></div>
+                        <div class="flex justify-between"><span class="text-slate-400">Account No:</span><span class="text-white font-mono">0001234567890</span></div>
+                        <div class="flex justify-between"><span class="text-slate-400">Reference:</span><span class="text-white font-mono">SPONSOR-${Date.now().toString().slice(-6)}</span></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3">Please use the reference above so we can match your payment.</p>
+                `;
+            }
+        }
+
+        // ============ SUMMARY ============
+        function updateSummary() {
+            const name = document.getElementById('donorName').value || '—';
+            const amount = parseInt(document.getElementById('donationAmount').value) || 0;
+            document.getElementById('sumChild').textContent = selectedChild ? selectedChild.name : '—';
+            document.getElementById('sumDonor').textContent = name;
+            document.getElementById('sumAmount').textContent = amount.toLocaleString() + ' FRw';
+            document.getElementById('sumTotal').textContent = amount.toLocaleString() + ' FRw';
+        }
+
+        document.getElementById('donorName').addEventListener('input', updateSummary);
+        document.getElementById('donationAmount').addEventListener('change', updateSummary);
+
+        // ============ HELPER: MAKE ID SAFELY ============
+        function makeId(prefix, collection) {
+            const nums = (collection || []).map(item => parseInt((item.id || "").split('-')[1]) || 0);
+            const next = (nums.length ? Math.max(...nums) : 0) + 1;
+            return `${prefix}-${String(next).padStart(3, '0')}`;
+        }
+
+        // ============ SUBMIT ============
+        function submitSponsorship() {
+            const name = document.getElementById('donorName').value.trim();
+            const email = document.getElementById('donorEmail').value.trim();
+            const phone = document.getElementById('donorPhone').value.trim();
+            const amount = parseInt(document.getElementById('donationAmount').value);
+            const method = document.querySelector('input[name="payment"]:checked').value;
+
+            if (!name || !email || !phone) {
+                alert("❌ Please fill in all your information.");
+                return;
+            }
+            if (!selectedChild) {
+                alert("❌ Please select a child to sponsor.");
+                return;
+            }
+
+            // Validate payment fields
+            if (method === 'Mobile Money') {
+                const phone2 = document.getElementById('momoPhone').value.trim();
+                if (!phone2) { alert("❌ Please enter your Mobile Money phone number."); return; }
+            } else if (method === 'Card') {
+                const num = document.getElementById('cardNumber').value.trim();
+                const cName = document.getElementById('cardName').value.trim();
+                const exp = document.getElementById('cardExpiry').value.trim();
+                const cvv = document.getElementById('cardCvv').value.trim();
+                if (!num || !cName || !exp || !cvv) { alert("❌ Please fill in all card details."); return; }
+            }
+
+            // Simulate payment processing
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = "⏳ Processing payment...";
+            btn.disabled = true;
+
+            setTimeout(() => {
+                try {
+                    const receiptId = "RC-" + Date.now().toString().slice(-8);
+
+                    // 1. Record donation
+                    DB.donations = DB.donations || [];
+                    DB.donations.unshift({
+                        id: makeId('DN', DB.donations),
+                        date: new Date().toISOString().split('T')[0],
+                        donor: name,
+                        type: "Cash",
+                        amount: amount,
+                        purpose: `Sponsorship for ${selectedChild.name}`,
+                        method: method
+                    });
+
+                    // 2. Update child's sponsor
+                    const child = DB.children.find(c => c.id === selectedChild.id);
+                    if (child) child.sponsor = name;
+
+                    // 3. Add/update sponsor record
+                    DB.sponsors = DB.sponsors || [];
+                    let sponsor = DB.sponsors.find(s => s.name === name);
+                    if (sponsor) {
+                        sponsor.totalDonated = (sponsor.totalDonated || 0) + amount;
+                        sponsor.childrenSponsored = (sponsor.childrenSponsored || 0) + 1;
+                    } else {
+                        DB.sponsors.push({
+                            id: makeId('SP', DB.sponsors),
+                            name: name,
+                            email: email,
+                            phone: phone,
+                            childrenSponsored: 1,
+                            totalDonated: amount,
+                            since: new Date().getFullYear().toString(),
+                            status: "ACTIVE",
+                            preferences: { ageMin: 5, ageMax: 12, gender: "Any", disabilityFocus: false }
+                        });
+                    }
+
+                    // 4. Add milestone to child's timeline
+                    DB.milestones = DB.milestones || [];
+                    DB.milestones.push({
+                        id: makeId('MS', DB.milestones),
+                        childId: selectedChild.id,
+                        date: new Date().toISOString().split('T')[0],
+                        type: "Sponsorship",
+                        title: `Sponsored by ${name}`,
+                        description: `${name} has committed ${amount.toLocaleString()} FRw monthly to support ${selectedChild.name}.`,
+                        icon: "💝"
+                    });
+
+                    // 5. Save to localStorage (with fallback)
+                    if (typeof saveDB === 'function') {
+                        saveDB();
+                    } else {
+                        localStorage.setItem('hopeHavenDB', JSON.stringify(DB));
+                    }
+
+                    // 6. Show success modal
+                    document.getElementById('receiptId').textContent = receiptId;
+                    document.getElementById('receiptChild').textContent = selectedChild.name;
+                    document.getElementById('receiptAmount').textContent = amount.toLocaleString() + ' FRw';
+                    document.getElementById('receiptMethod').textContent = method;
+                    document.getElementById('successModal').classList.remove('hidden');
+
+                    btn.innerHTML = "💝 Complete Sponsorship";
+                    btn.disabled = false;
+
+                } catch (err) {
+                    console.error("Sponsorship error:", err);
+                    alert("❌ Something went wrong. Please try again.\n\nError: " + err.message);
+                    btn.innerHTML = "💝 Complete Sponsorship";
+                    btn.disabled = false;
+                }
+            }, 1500);
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+            window.location.href = 'impact.html';
+        }
+
+        // ============ INIT ============
+        loadSponsorableChildren();
+        renderPaymentDetails();
+        updateSummary();
+    </script>
+</body>
+</html>
